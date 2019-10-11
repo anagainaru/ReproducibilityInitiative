@@ -54,12 +54,9 @@ class DistributionRuns():
     def get_optimal_cost(self, wf):
         assert (self.all_data is not None),\
             "Data needs to be set for optimal cost"
-        assert (len(self.mu) == 1),\
-            "Optimal costs can be computed only for single distributions"
 
         wf.set_workload(self.all_data)
         params = [self.sigma] + [self.mu] + self.args
-        wf.set_best_fit([self.distribution, params])
         return wf.compute_cdf_cost(self.cdf_function)
 
 
@@ -160,7 +157,7 @@ if __name__ == '__main__':
         test_cnt = perc 
         training = scenario.get_training_set(perc)
         cost_model = scenario.get_cost_model()
-
+        
         wf = WorkloadFit.WorkloadFit(all_data, cost_model, bins=bins)
         optimal_cost = scenario.get_optimal_cost(wf)
         df.loc[len(df)] = ["Optimal", "", "", optimal_cost, perc, 0]
@@ -175,7 +172,7 @@ if __name__ == '__main__':
             print("Discrete cost %f" %(cost))
 
         wf.set_interpolation_model(
-            WorkloadFit.PolyInterpolation(max_order=20))
+            WorkloadFit.PolyInterpolation(max_order=6))
         best_cost = wf.compute_interpolation_cost()
         best_params = wf.get_best_fit()
         if verbose:
