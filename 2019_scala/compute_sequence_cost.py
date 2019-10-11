@@ -112,15 +112,17 @@ class TruncNormRun(DistributionRuns):
         self.set_cdf()
         return []
 
+def print_usage(name):
+    print("Usage: %s {folder/dataset_file or distribution} [verbose]" %(name))
+    print("Supported distributions: [truncnorm, expon]")
+    print("Dataset file needs to contain a list of execution times")
 
 if __name__ == '__main__':
     train_perc = list(range(10, 511, 50))
 
     verbose = False
     if len(sys.argv) < 2:
-        print("Usage: %s {dataset_file or distribution} [verbose]" %(sys.argv[0]))
-        print("Accepted distributions: [truncnorm, expon, doublenorm]")
-        print("Example dataset: %s ACCRE/Multi_Atlas.out" %(sys.argv[0]))
+        print_usage(sys.argv[0])
         exit()
 
     if len(sys.argv) > 2:
@@ -135,20 +137,17 @@ if __name__ == '__main__':
         dataset = "expon"
         scenario = ExponentialRun()
         all_data = scenario.load_workload()
-    elif sys.argv[1]=="doublenorm":
-        dataset = "doublenorm"
-        scenario = DoubleNormRun()
-        all_data = scenario.load_workload()
-
     else:
-        dataset = sys.argv[1].split("/")[1]
-        dataset = dataset[:-4]
+        try:
+            dataset = sys.argv[1].split("/")[1]
+            dataset = dataset[:-4]
 
-        scenario = LogDataRun()
-        all_data = scenario.load_workload(dataset)
-        if len(all_data)<600:
+            scenario = LogDataRun()
+            all_data = scenario.load_workload(dataset)
+        except:
+            print_usage(sys.argv[0])
             exit()
-
+        
     df = pd.DataFrame(columns=["Function", "Fit", "Parameters",
                                "Cost", "Trainset", "EML"])
     bins = 100
