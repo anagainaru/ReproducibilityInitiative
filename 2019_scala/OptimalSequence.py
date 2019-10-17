@@ -26,8 +26,8 @@ class RequestSequence():
         return fi / self.CDF_func(self._b)
 
     def compute_sum_F(self):
-        sumF = (self._n + 1) * [0]
-        for k in range(self._n - 1, 0, -1):
+        sumF = (self._n + 2) * [0]
+        for k in range(self._n, -1, -1):
             sumF[k] = self.compute_F(k) + sumF[k + 1]
         return sumF
 
@@ -68,7 +68,7 @@ class TOptimalSequence(RequestSequence):
                 makespan += E_val[0]
                 self._E[j + 1] = E_val
 
-            if min_request == -1 or min_makespan >= makespan:
+            if min_request == -1 or min_makespan > makespan:
                 min_makespan = makespan
                 min_request = j
         return (min_makespan, min_request)
@@ -145,7 +145,7 @@ class TODiscretSequence(RequestSequence):
                 makespan = float(self.__sumF[i] * self.discret_values[j])
                 makespan += self._E[j + 1][0]
 
-                if min_request == -1 or min_makespan >= makespan:
+                if min_request == -1 or min_makespan > makespan:
                     min_makespan = makespan
                     min_request = j
             self._E[i] = (min_makespan, min_request)
