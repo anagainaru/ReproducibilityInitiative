@@ -20,7 +20,7 @@ class WorkloadCDF():
 
     def set_workload(self, data):
         self.data = data
-        self.discrete_data, self.discrete_cdf = self.compute_discrete_cdf()
+        self.compute_discrete_cdf()
         self.lower_limit = min(data)
         self.upper_limit = max(data)
         self.best_fit = None
@@ -74,6 +74,8 @@ class WorkloadCDF():
         for i in range(len(cdf)):
             cdf[i] /= cdf[-1]
 
+        self.discrete_data = discret_data
+        self.discrete_cdf = cdf
         return discret_data, cdf
 
     def compute_best_cdf_fit(self):
@@ -94,8 +96,20 @@ class WorkloadCDF():
     def get_interpolation_cdf(self, all_data, best_fit):
         if self.best_fit is None:
             self.compute_best_fit()
-        return self.fit_model[self.best_fit_index].get_discrete_cdf(
-            all_data, best_fit)
+        self.discrete_data, self.discrete_cdf = self.fit_model[
+            self.best_fit_index].get_discrete_cdf(all_data, best_fit)
+        return self.discrete_data, self.discrete_cdf
+
+    def compute_request_sequence(self, max_request=-1):
+        if max_request == -1:
+            max_request = max(self.discrete_data)
+        handler = RequestSequence(max_request, self.discrete_data,
+                                  self.discrete_cdf)
+        return handler.compute_request_sequence()
+
+    def compute_sequence_cost(self, sequence, data):
+        handler = LogDataCost(sequence)
+        return handler.compute_cost(data)
 
 #-------------
 # Classes for defining how the interpolation will be done
