@@ -21,15 +21,19 @@ optimal_data, optimal_cdf = wf.compute_cdf()
 ```
 
 ![Example CDF](./docs/discrete_cdf.png)
-*Example discrete CDF and data (without using interpolation)*
+*Example discrete CDF and data (without using interpolation) - vertical blue lines represent the recommended request times*
 
 ### 2. Compute the sequence of requests
 
-To compute the optimal sequence of requests given the historic data, simply call the `compute_sequence` function and optionally provide the upper limit expected execution time of the application (if nothing is provided, the max(data) will be used as upper limit)
+The `compute_sequence` function returns the recommended sequence of requests given a historic data. Optionally, the function takes the upper limit expected for the execution time of the application (if nothing is provided, the max(data) will be used as upper limit)
 
 ```python
 sequence = wf.compute_sequence(max_value=100)
 ```
+For large historic datasets, computing the distribution using the discrete data will give good results. Otherwise, interpolation is needed. 
+
+![Example sequence](./docs/sequence.png)
+*Example discrete vs interpolation CDF and sequences (for 10 and 300 datasets)*
 
 
 ### 3. [Optional] Compute the cost of a sequence of requests for new data
@@ -37,6 +41,5 @@ sequence = wf.compute_sequence(max_value=100)
 Compute the cost of a given sequence by creating a Cost object based on the sequence and runing it on the new data. The cost represents the average time used by each submission for all reservations. This time represents all the failed reservation together with the sucessful one. For example, for two submissions one of 10 and another of 15 hours, the cost of the sequence [8, 11, 16] is the average between `8 + 10` (the first submission will fail when requesting 8hs and will succeed the second time) and `8 + 11 + 15`.
 
 ```python
-cost_handler = WorkloadCDF.LogDataCost(optimal_sequence)
-optimal_cost = cost_handler.compute_cost(new_data)
+cost = wf.compute_sequence_cost(sequence, new_data)
 ```
