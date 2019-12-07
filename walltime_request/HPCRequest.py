@@ -5,7 +5,7 @@ import scipy.stats as st
 from scipy.optimize import curve_fit
 import sys
 
-class WorkloadCDF():
+class Workload():
     def __init__(self, data, cost_model=None, interpolation_model=None,
                  verbose=False):
         self.verbose = verbose
@@ -31,14 +31,9 @@ class WorkloadCDF():
         else:
             self.fit_model = interpolation_model
         self.best_fit = None
+        best_fit = self.compute_best_cdf_fit()
+        return best_fit
     
-    def add_interpolation_model(self, interpolation_model):
-        if not isinstance(interpolation_model, list):
-            self.fit_model.append(interpolation_model)
-        else:
-            self.fit_model += interpolation_model
-        self.best_fit = None
-
     # best_fit has the format returned by the best_fit functions in the
     # interpolation model: [distr, params] or [order, params], ['log', params]
     def set_best_fit(self, best_fit):
@@ -99,8 +94,20 @@ class WorkloadCDF():
         self.discrete_data, self.discrete_cdf = self.fit_model[
             self.best_fit_index].get_discrete_cdf(all_data, best_fit)
         return self.discrete_data, self.discrete_cdf
+    
+    def compute_cdf(self, data=None, fit=None):
+        if data is None:
+            data = self.data
+        if fit is None:
+            fit = self.best_fit
+        if self.fit_model is not None and len(self.fit_model)>0: 
+            self.get_interpolation_cdf(data, fit)
+        else:
+            self.compute_discrete_cdf()
+        return self.discrete_data, self.discrete_cdf
 
     def compute_request_sequence(self, max_request=-1):
+        self.compute_cdf()
         if max_request == -1:
             max_request = max(self.discrete_data)
         handler = RequestSequence(max_request, self.discrete_data,
