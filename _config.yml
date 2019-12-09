@@ -1,5 +1,5 @@
 title: Todo
-logo: https://github.com/anagainaru/anagainaru.github.io/blob/master/favicon.png
-description: Lista de taskuri
+logo: https://raw.githubusercontent.com/anagainaru/anagainaru.github.io/master/favicon.png
+description: Task list
 url: http://www.ana-gainaru.com
 theme: jekyll-theme-minimal
