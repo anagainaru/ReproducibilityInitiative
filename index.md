@@ -1,3 +1,7 @@
+## Presentations
+
+- [ ] Invited talk Bordeaux
+
 ## Research
 
 - [ ] Prefetching study
