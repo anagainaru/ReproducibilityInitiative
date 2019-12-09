@@ -1,8 +1,16 @@
 ## Service
 
-[ ] Tutorials Vice-chair SC 2020
+- [ ] Tutorials Vice-chair SC 2020
+- [ ] Program committee HPDC 2020
+- [ ] ISC 2020 Poster
+- [ ] EuroMPI 2020 (not sure if I accepted)
+- [ ] IJHPCA paper review editor
+- [ ] ACM Transactions on Parallel Computing.
 
-[ ] Program committee HPDC 2020
+
+### Details
+
+**HPDC**
 
 ```
 January 16, 2020: Abstract submission deadline
@@ -16,7 +24,7 @@ March 10 - 17, 2020: Online reviewer discussions and review refinement
 March 19 - 20, 2020: PC Meeting in the Boston area, MA, USA
 ```
 
-[ ] ISC 2020 Poster
+**ISC**
 
 ```
 Submission Deadline      March 4, 2020
@@ -24,7 +32,7 @@ Acceptance Notification  April 1, 2020
 ```
 
 
-[ ] EuroMPI 2020 (not sure if I accepted)
+**EuroMPI**
 
 ```
 Papers due: April 22
@@ -33,10 +41,7 @@ Paper assignments: April 26
 Reviews due: May 27
 ```
 
-[ ] IJHPCA paper review editor
-
-
-[ ] ACM Transactions on Parallel Computing.
+**TOPC**
 
 ```
 Mitigating Inter-Job Interference via Process-Level Quality-of-Service
