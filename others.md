@@ -1,6 +1,25 @@
+## Presentations
+
+- [ ] Invited talk Bordeaux
+
+## Papers
+
+- [ ] Experiments for the IPDPS second round of reviews
+
+## Research
+
+- [ ] Prefetching study
+- [ ] Preferential checkpoiting
+- [ ] Geometry aware approximation
+- [ ] UTK
+- [ ] Neural networks resiliency
+- [ ] Speculative scheduling simulator
+
+[Back](index.md)
+
 ## Travel
 
-- [ ] SC Reimbursment
+- [x] SC Reimbursement
 - [ ] HPDC Travel arrangements 19-20 March 2020
 - [ ] SC PC Travel arrangements 22 January 2020
 
