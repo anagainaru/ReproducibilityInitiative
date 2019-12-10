@@ -1,3 +1,22 @@
+## Presentations
+
+- [ ] Invited talk Bordeaux
+
+## Papers
+
+- [ ] Experiments for the IPDPS second round of reviews
+
+## Research
+
+- [ ] Prefetching study
+- [ ] Preferential checkpoiting
+- [ ] Geometry aware approximation
+- [ ] UTK
+- [ ] Neural networks resiliency
+- [ ] Speculative scheduling simulator
+
+[Back](index.md)
+
 ## Service
 
 - [ ] Tutorials Vice-chair SC 2020
