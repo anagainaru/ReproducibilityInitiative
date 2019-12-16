@@ -1,6 +1,6 @@
 ## Presentations
-
-- [ ] Invited talk Bordeaux
+  
+- [x] Invited talk Bordeaux
 
 ## Papers
 
@@ -14,7 +14,6 @@
 - [ ] UTK
 - [ ] Neural networks resiliency
 - [ ] Speculative scheduling simulator
-
 [Back](index.md)
 
 ## Service
@@ -23,8 +22,8 @@
 - [ ] Program committee HPDC 2020
 - [ ] ISC 2020 Poster
 - [ ] EuroMPI 2020 (not sure if I accepted)
-- [ ] IJHPCA paper review editor
-- [ ] ACM Transactions on Parallel Computing.
+- [x] IJHPCA paper review editor
+- [x] ACM Transactions on Parallel Computing.
 
 
 ### Details

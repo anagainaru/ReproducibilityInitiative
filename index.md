@@ -1,6 +1,6 @@
 ## Presentations
-
-- [ ] Invited talk Bordeaux
+  
+- [x] Invited talk Bordeaux
 
 ## Papers
 
@@ -14,7 +14,6 @@
 - [ ] UTK
 - [ ] Neural networks resiliency
 - [ ] Speculative scheduling simulator
-
 ## Others
 
 [Service](service.md)
