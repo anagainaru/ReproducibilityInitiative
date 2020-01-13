@@ -1,6 +1,6 @@
 ## Presentations
   
-- [ ] Invited talk scheduling workhop 
+- [ ] Invited talk scheduling workhop
   - [ ] Send title and abstract
 - [x] Invited talk Bordeaux
 
