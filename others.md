@@ -18,9 +18,10 @@
 
 ## Travel
 
-- [ ] SC Reimbursement
+- [x] SC Reimbursement
 - [ ] HPDC Travel arrangements 19-20 March 2020
 - [ ] SC PC Travel arrangements 22 January 2020
+- [ ] Travel to the scheduling workshop, Denver, 13-15 May 2020
 
 ## Visas
 
@@ -29,4 +30,5 @@
 
 ## Bank
 
-- [ ] Bank savings account vesting 10 January 2020
+- [x] Bank savings account vesting 10 January 2020
+  - [ ] Find another certificate offer
