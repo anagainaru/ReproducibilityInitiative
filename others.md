@@ -6,17 +6,21 @@
 
 ## Papers
 
-- [ ] Create baseline paper for PDE-based app resiliency
-- [x] Experiments for the IPDPS second round of reviews
+- [ ] PDE-based app resiliency paper
+   - [ ] Submit abstract - 01/24
+   - [ ] Run new experiments
+   - [x] Create baseline paper for PDE-based app resiliency
+- [x] IPDPS paper accepted
 
 ## Research
 
-- [ ] Prefetching study
-- [ ] Preferential checkpoiting
-- [ ] Geometry aware approximation
+- [ ] Neural networs for linear algebra
+- [ ] Prefetching study - I/O maybe Lucas/HY
+- [ ] Preferential checkpoiting - Gopi/Devesh
+- [ ] Geometry aware approximation - Josh
 - [ ] UTK
 - [ ] Neural networks resiliency
-- [ ] Speculative scheduling simulator
+- [ ] Speculative scheduling simulator - Gopi/Baxter
 
 <br/>
 
@@ -26,12 +30,11 @@
 
 - [x] SC Reimbursement
 - [ ] HPDC Travel arrangements 19-20 March 2020
-- [ ] SC PC Travel arrangements 22 January 2020
 - [ ] Travel to the scheduling workshop, Denver, 13-15 May 2020
 
 ## Visas
 
-- [ ] H1B email to lawyers
+- [x] H1B email to lawyers
 - [ ] Green Card
 
 ## Bank

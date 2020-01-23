@@ -6,17 +6,21 @@
 
 ## Papers
 
-- [ ] Create baseline paper for PDE-based app resiliency
-- [x] Experiments for the IPDPS second round of reviews
+- [ ] PDE-based app resiliency paper
+   - [ ] Submit abstract - 01/24
+   - [ ] Run new experiments
+   - [x] Create baseline paper for PDE-based app resiliency
+- [x] IPDPS paper accepted
 
 ## Research
 
-- [ ] Prefetching study
-- [ ] Preferential checkpoiting
-- [ ] Geometry aware approximation
+- [ ] Neural networs for linear algebra
+- [ ] Prefetching study - I/O maybe Lucas/HY
+- [ ] Preferential checkpoiting - Gopi/Devesh
+- [ ] Geometry aware approximation - Josh
 - [ ] UTK
 - [ ] Neural networks resiliency
-- [ ] Speculative scheduling simulator
+- [ ] Speculative scheduling simulator - Gopi/Baxter
 
 <br/>
 

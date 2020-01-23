@@ -6,17 +6,21 @@
 
 ## Papers
 
-- [ ] Create baseline paper for PDE-based app resiliency
-- [x] Experiments for the IPDPS second round of reviews
+- [ ] PDE-based app resiliency paper
+   - [ ] Submit abstract - 01/24
+   - [ ] Run new experiments
+   - [x] Create baseline paper for PDE-based app resiliency
+- [x] IPDPS paper accepted
 
 ## Research
 
-- [ ] Prefetching study
-- [ ] Preferential checkpoiting
-- [ ] Geometry aware approximation
+- [ ] Neural networs for linear algebra
+- [ ] Prefetching study - I/O maybe Lucas/HY
+- [ ] Preferential checkpoiting - Gopi/Devesh
+- [ ] Geometry aware approximation - Josh
 - [ ] UTK
 - [ ] Neural networks resiliency
-- [ ] Speculative scheduling simulator
+- [ ] Speculative scheduling simulator - Gopi/Baxter
 
 <br/>
 
@@ -27,6 +31,7 @@
 - [ ] Tutorials Vice-chair SC 2020
 - [ ] Program committee HPDC 2020
 - [ ] ISC 2020 Poster
+- [ ] SC 2020 BOF
 - [ ] EuroMPI 2020 (not sure if I accepted)
 - [x] IJHPCA paper review editor
 - [x] ACM Transactions on Parallel Computing.
