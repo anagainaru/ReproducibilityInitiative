@@ -7,7 +7,7 @@
 ## Papers
 
 - [ ] PDE-based app resiliency paper
-   - [ ] Submit abstract - 01/24
+   - [x] Submit abstract - 01/24
    - [ ] Run new experiments
    - [x] Create baseline paper for PDE-based app resiliency
 - [x] IPDPS paper accepted

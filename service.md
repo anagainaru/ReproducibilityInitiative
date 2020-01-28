@@ -7,7 +7,7 @@
 ## Papers
 
 - [ ] PDE-based app resiliency paper
-   - [ ] Submit abstract - 01/24
+   - [x] Submit abstract - 01/24
    - [ ] Run new experiments
    - [x] Create baseline paper for PDE-based app resiliency
 - [x] IPDPS paper accepted
@@ -28,6 +28,7 @@
 
 ## Service
 
+- [ ] Organizing CCIW 2020
 - [ ] Tutorials Vice-chair SC 2020
 - [ ] Program committee HPDC 2020
 - [ ] ISC 2020 Poster
