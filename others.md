@@ -32,10 +32,7 @@
 
 ## Travel
 
-- [ ] Travel arrangements for NSF
 - [ ] Travel to the scheduling workshop, Denver, 13-15 May 2020
-- [x] HPDC Travel arrangements 19-20 March 2020
-- [x] SC Reimbursement
 
 ## Visas
 
@@ -44,7 +41,7 @@
 
 ## Apply
 
-- [ ] Application for INRIA
+- [x] Application for INRIA
 - [x] Statements for US universities
 - [x] Contact Judith
 

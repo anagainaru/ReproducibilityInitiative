@@ -33,3 +33,5 @@
 [Service](service.md)
 
 [Travel and bills](others.md)
+
+[Teaching](teaching.md)
