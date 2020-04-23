@@ -28,7 +28,7 @@ Intruction on how to install CRIU can be found here:  [https://criu.org/Installa
 ](https://criu.org/Installation) <br/>
 I recommand building CRIU from source.
 
-By default the checkpoint size limit for CRIU is 1GB. For SLANT you need to increase the limit to 51GB (wither in the CRIU configuration file for docker, as a parameter option if running CRIU independent of docker or manually in the source code). The experiments in this repo used the 3rd solution. Detail in the following section.
+By default the checkpoint size limit for CRIU is 1GB. For SLANT you need to increase the limit to 51GB (wither in the CRIU configuration file for docker, as a parameter option if running CRIU independent of docker or manually in the source code). The experiments in this repo used the 3rd solution. Detail in the [Reproducability](Reproducability) section.
 
 ## Tool for generating the submission requests
 
@@ -41,7 +41,7 @@ Link to the source code for iSBatch: [https://github.com/anagainaru/iSBatch](htt
 Input: Container with past execution walltimes
 <br/>*Optionally*: container with typical memory footprint of the application. Each entry in the contaner is a tuple (ts_i, mf_i), where ts_i is a timestamp and mf_i is the maximum memory footprint for the timeinterval [ts_(i-1) to ts_i].
 
-By default the iSBatch software is assuming a typical HPC platform where an application pays a cost during submission in the form of wait time in the scheduler's queue before execution and in the form of the failed reservations when the walltime/memory are underestimated. Details on how isBatch is used for SLANT can be found in the next section.
+By default the iSBatch software is assuming a typical HPC platform where an application pays a cost during submission in the form of wait time in the scheduler's queue before execution and in the form of the failed reservations when the walltime/memory are underestimated. Details on how isBatch is used for SLANT can be found in the [Reproducability](Reproducability) section.
 
 
 # Execution details
