@@ -135,8 +135,8 @@ and Dartmouth Raiders Dataset (DRD) datasets [https://github.com/HaxbyLab/raider
 
 **Machine configuration**
 
-We run the application on a Haswell platform composed of a server with two Intel Xeon E5-2680v3
-processors (12 core @ 2,5 GHz) and 100GB main memory.
+We run the application on a 256-thread Knights
+Landing Intel Processor (Xeon Phi 7230, 1.30GHz, Quadrant/Cache mode) with 96GB of main memory.
 
 ## Input data
 The repo contains the results for the following inputs from the DND dataset 
@@ -149,6 +149,7 @@ The repo contains the results for the following inputs from the DND dataset
 
 # Performance
 
-We measured the average time it takes to checkpoint and to restart SLANT.
+The average read and write time for taking different checkpoint sizes for SLANT on the Knight Landing platform.
 
-![Bandwidth](figures/bandwidth.png)
+<img src="figures/bandwidth.png" width="500px" />
+
