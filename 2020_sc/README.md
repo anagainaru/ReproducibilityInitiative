@@ -85,6 +85,10 @@ Elapsed time is 3159.428664 seconds.
 *******generating pdf time: 50.718374 seconds
 *******generating text file time: 17.091906 seconds
 ```
+The application is divided into three main phases: i)
+a preprocessing phase that performs transformations on the
+target image ii) deep-learning phase iii) a post-processing phase doing label fusion
+to generate final application result. 
 
 ## Daemon taking snapshots
 
@@ -144,9 +148,7 @@ The repo contains the results for the following inputs from the DND dataset
 
 
 # Performance
-The application is divided into three main phases: i)
-a preprocessing phase that performs transformations on the
-target image (MRI is a non-scaled imaging technique) ii) deep-
-learning phase iii) a post-processing phase doing label fusion
-to generate final application result. Each of the tasks may
-present run-to-run variation in their walltime.
+
+We measured the average time it takes to checkpoint and to restart SLANT.
+
+![Bandwidth](figures/bandwidth.png)
