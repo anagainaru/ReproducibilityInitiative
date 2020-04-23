@@ -46,36 +46,48 @@ By default the iSBatch software is assuming a typical HPC platform where an appl
 
 # Execution details
 
-## Execution workflow
+**Running SLANT**
 
+SLANT requires setting the input (where the input MRI needs to be stored) and output folders (where the generated files will be stored).
 ```bash
-sudo docker logs --latest | grep time
-To get the memory footprint every 2 seconds: 
-while true; do sudo docker stats -a --no-stream >> stats.txt; sleep 2;  done
+export input_dir=/path_to/input_dir
+export output_dir=/path_to/output
 ```
 
-```
+Checkpointing with Docker is experimental and proved not to be stable yet so we switched to the podman container engine  that is completely compatible with docker images.
+Start the execution by running the SLANT docker image using podman
+```bash
 podman run --name slant -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS vuiiscci/slant:deep_brain_seg_v1_0_0_CPU /extra/run_deep_brain_seg.sh &
 ```
-Take a checkpoint
-`time podman container checkpoint -l`
+      
+**User trigger checkpoints**
 
-Restore the container
-`time podman container restore -l`
+While the container is running, taking a checkpoint: `podman container checkpoint -l`
+To check the checkpoint size:
+```bash
+du -h /var/lib/containers/storage/overlay-containers/{container_id}/userdata/checkpoint/
+```
 
-The options for checkpoint create:
+And to restore a container:`time podman container restore -l`
 
-    Usage:  docker checkpoint create [OPTIONS] CONTAINER CHECKPOINT
+Once SLANT finished running we use: `sudo docker logs --latest | grep time` to gather the walltime for each phase of the application. Example output:
+```
+*******preprocessing time: 2839.628881 seconds
+*******segmentation time: 7551.472055 seconds
+Elapsed time is 189.978879 seconds.
+Elapsed time is 2027.278245 seconds.
+Elapsed time is 3159.428664 seconds.
+*******postprocessing time: 3176.751577 seconds
+*******generating pdf time: 50.718374 seconds
+*******generating text file time: 17.091906 seconds
+```
 
-    Create a checkpoint from a running container
+**Scripts**
 
-      --leave-running=false    Leave the container running after checkpoint
-      --checkpoint-dir         Use a custom checkpoint storage directory
-
-And to restore a container:
-
-    Usage:  docker start --checkpoint CHECKPOINT_ID [OTHER OPTIONS] CONTAINER
-
+To get the memory footprint every 2 seconds: 
+```bash
+while true; do sudo docker stats -a --no-stream >> stats.txt; sleep 2;  done
+```
 
 
 ## Reproducability 
