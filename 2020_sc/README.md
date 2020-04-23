@@ -48,6 +48,36 @@ By default the iSBatch software is assuming a typical HPC platform where an appl
 
 ## Execution workflow
 
+```bash
+sudo docker logs --latest | grep time
+To get the memory footprint every 2 seconds: 
+while true; do sudo docker stats -a --no-stream >> stats.txt; sleep 2;  done
+```
+
+```
+podman run --name slant -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS vuiiscci/slant:deep_brain_seg_v1_0_0_CPU /extra/run_deep_brain_seg.sh &
+```
+Take a checkpoint
+`time podman container checkpoint -l`
+
+Restore the container
+`time podman container restore -l`
+
+The options for checkpoint create:
+
+    Usage:  docker checkpoint create [OPTIONS] CONTAINER CHECKPOINT
+
+    Create a checkpoint from a running container
+
+      --leave-running=false    Leave the container running after checkpoint
+      --checkpoint-dir         Use a custom checkpoint storage directory
+
+And to restore a container:
+
+    Usage:  docker start --checkpoint CHECKPOINT_ID [OTHER OPTIONS] CONTAINER
+
+
+
 ## Reproducability 
 
 In this section you can find details of the software stack and platform configurations used to enable checkpointing for SLANT.
