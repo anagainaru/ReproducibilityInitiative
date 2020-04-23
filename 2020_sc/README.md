@@ -60,15 +60,19 @@ Start the execution by running the SLANT docker image using podman
 podman run --name slant -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS vuiiscci/slant:deep_brain_seg_v1_0_0_CPU /extra/run_deep_brain_seg.sh &
 ```
       
-**User trigger checkpoints**
+## User triggered checkpoints
+
+To investigate the memory footprint of SLANT at any moment (to make sure the checkpoint size will be as desired):
+`podman stats --no-stream | grep -v ID | cut -d" " -f10`
 
 While the container is running, taking a checkpoint: `podman container checkpoint -l`
-To check the checkpoint size:
+
+Once the checkpointing is finished, we get the checkpoint size:
 ```bash
 du -h /var/lib/containers/storage/overlay-containers/{container_id}/userdata/checkpoint/
 ```
 
-And to restore a container:`time podman container restore -l`
+Restore a container:`podman container restore -l`
 
 Once SLANT finished running we use: `sudo docker logs --latest | grep time` to gather the walltime for each phase of the application. Example output:
 ```
@@ -82,12 +86,20 @@ Elapsed time is 3159.428664 seconds.
 *******generating text file time: 17.091906 seconds
 ```
 
-**Scripts**
+## Daemon taking snapshots
 
-To get the memory footprint every 2 seconds: 
+To get the memory footprint of SLANT every 2 seconds: 
 ```bash
 while true; do sudo docker stats -a --no-stream >> stats.txt; sleep 2;  done
+cat stats.txt | grep -v ID | cut -d" " -f10
 ```
+Example logs for running this commands can be found in the `SLANT_logs` folder.
+
+The `take_checkpoins.sh` script can be used in the background to take checkpoints during SLANT execution and fixed 
+moments of time (the timestamps are hardcoded in the script). 
+
+The `take_checkpoins_size.sh` script can be used in the background to take checkpoints of fixed size in a given order (the sizes are hardcoded in the script). 
+
 
 
 ## Reproducability 
