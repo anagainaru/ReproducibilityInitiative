@@ -134,6 +134,13 @@ and Dartmouth Raiders Dataset (DRD) datasets [https://github.com/HaxbyLab/raider
 We run the application on a Haswell platform composed of a server with two Intel Xeon E5-2680v3
 processors (12 core @ 2,5 GHz) and 100GB main memory.
 
+## Input data
+The repo contains the results for the following inputs from the DND dataset 
+ - the IDs correspond to the filenames in the `SLANT_logs` folder <br/>
+**ID 72**<br/> sub-rid000038_task-raiders_acq-8ch344vol_run-07_bold.nii.gz <br/>
+**ID 80**<br/> sub-rid000042_task-raiders_acq-8ch344vol_run-07_bold.nii.gz <br/>
+**ID 2**<br/> sub-rid000005_task-raiders_acq-8ch336vol_run-01_bold.nii.gz <br/>
+**ID 81**<br/> sub-rid000043_task-raiders_acq-8ch326vol_run-04_bold.nii.gz
 
 
 # Performance
