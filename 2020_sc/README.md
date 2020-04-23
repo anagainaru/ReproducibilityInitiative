@@ -25,10 +25,32 @@ Link to the source code for CRIU: [https://github.com/checkpoint-restore/criu
 ](https://github.com/checkpoint-restore/criu)
 
 Intruction on how to install CRIU can be found here:  [https://criu.org/Installation
-](https://criu.org/Installation)
+](https://criu.org/Installation) <br/>
+I recommand building CRIU from source.
+
+By default the checkpoint size limit for CRIU is 1GB. For SLANT you need to increase the limit to 51GB (wither in the CRIU configuration file for docker, as a parameter option if running CRIU independent of docker or manually in the source code). The experiments in this repo used the 3rd solution. Detail in the following section.
+
+## Tool for generating the submission requests
+
+<img src="https://raw.githubusercontent.com/anagainaru/iSBatch/master/docs/logo.png" align="left" alt="Logo" width="250"/>
+
+We used the iSBatch tool to decide when to take the checkpoints for our executions.
+
+Link to the source code for iSBatch: [https://github.com/anagainaru/iSBatch](https://github.com/anagainaru/iSBatch)
+
+Input: Container with past execution walltimes
+<br/>*Optionally*: container with typical memory footprint of the application. Each entry in the contaner is a tuple (ts_i, mf_i), where ts_i is a timestamp and mf_i is the maximum memory footprint for the timeinterval [ts_(i-1) to ts_i].
+
+By default the iSBatch software is assuming a typical HPC platform where an application pays a cost during submission in the form of wait time in the scheduler's queue before execution and in the form of the failed reservations when the walltime/memory are underestimated. Details on how isBatch is used for SLANT can be found in the next section.
 
 
 # Execution details
+
+## Execution workflow
+
+## Reproducability 
+
+In this section you can find details of the software stack and platform configurations used to enable checkpointing for SLANT.
 
 Software version:
 ```
@@ -55,11 +77,12 @@ and Dartmouth Raiders Dataset (DRD) datasets [https://github.com/HaxbyLab/raider
 
 **Machine configuration**
 
- We run the application on a Haswell
-platform composed of a server with two Intel Xeon E5-2680v3
+We run the application on a Haswell platform composed of a server with two Intel Xeon E5-2680v3
 processors (12 core @ 2,5 GHz) and 100GB main memory.
 
-## Performance details
+
+
+# Performance
 The application is divided into three main phases: i)
 a preprocessing phase that performs transformations on the
 target image (MRI is a non-scaled imaging technique) ii) deep-
