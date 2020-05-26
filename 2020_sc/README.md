@@ -28,7 +28,7 @@ Intruction on how to install CRIU can be found here:  [https://criu.org/Installa
 ](https://criu.org/Installation) <br/>
 I recommand building CRIU from source.
 
-By default the checkpoint size limit for CRIU is 1GB. For SLANT you need to increase the limit to 51GB (wither in the CRIU configuration file for docker, as a parameter option if running CRIU independent of docker or manually in the source code). The experiments in this repo used the 3rd solution. Detail in the [Reproducability](Reproducability) section.
+By default the checkpoint size limit for CRIU is 1GB. For SLANT you need to increase the limit to 51GB (wither in the CRIU configuration file for docker, as a parameter option if running CRIU independent of docker or manually in the source code). The experiments in this repo used the 3rd solution. Detail in the `Execution details` section below.
 
 ## Tool for generating the submission requests
 
@@ -46,7 +46,7 @@ By default the iSBatch software is assuming a typical HPC platform where an appl
 
 # Execution details
 
-**Running SLANT**
+## Running SLANT
 
 SLANT requires setting the input (where the input MRI needs to be stored) and output folders (where the generated files will be stored).
 ```bash
@@ -60,7 +60,7 @@ Start the execution by running the SLANT docker image using podman
 podman run --name slant -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS vuiiscci/slant:deep_brain_seg_v1_0_0_CPU /extra/run_deep_brain_seg.sh &
 ```
       
-## User triggered checkpoints
+## Taking checkpoints (triggered by the user)
 
 To investigate the memory footprint of SLANT at any moment (to make sure the checkpoint size will be as desired):
 `podman stats --no-stream | grep -v ID | cut -d" " -f10`
@@ -90,7 +90,8 @@ a preprocessing phase that performs transformations on the
 target image ii) deep-learning phase iii) a post-processing phase doing label fusion
 to generate final application result. 
 
-## Daemon taking snapshots
+## Taking checkpoints (triggered by a dameon)
+**If it's desired to take a snaphshot based on the memory footprint of SLANT**
 
 To get the memory footprint of SLANT every 2 seconds: 
 ```bash
@@ -99,14 +100,15 @@ cat stats.txt | grep -v ID | cut -d" " -f10
 ```
 Example logs for running this commands can be found in the `SLANT_logs` folder.
 
-The `take_checkpoins.sh` script can be used in the background to take checkpoints during SLANT execution and fixed 
-moments of time (the timestamps are hardcoded in the script). 
-
 The `take_checkpoins_size.sh` script can be used in the background to take checkpoints of fixed size in a given order (the sizes are hardcoded in the script). 
 
+**If it's desired to take a snaphshot based on a given timestamp**
+
+The `take_checkpoins.sh` script can be used in the background to take checkpoints during SLANT execution and fixed 
+moments of time (currently the timestamps are hardcoded in the script). 
 
 
-## Reproducability 
+## Software configuration 
 
 In this section you can find details of the software stack and platform configurations used to enable checkpointing for SLANT.
 
