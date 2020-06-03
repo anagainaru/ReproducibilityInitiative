@@ -1,5 +1,15 @@
 Scripts for running the Spatially Localized Atlas Network Tiles (SLANT) application with checkpointing enabled.
 
+### Table of contents:
+1. Description of the software and applications used
+2. Description of the used input data
+3. Steps to configure the software and applications used
+4. Description of all the scripts available in this repository
+5. Description of the system where we ran the scripts
+6. Short description on our performance results
+
+# 1. Description of the software and applications used
+
 ## SLANT
 <img src="https://github.com/MASILab/SLANTbrainSeg/blob/master/screenshot/test_volume_result.jpg" width="320px" align="left" />
 
