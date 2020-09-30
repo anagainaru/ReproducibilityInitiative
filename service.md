@@ -1,30 +1,37 @@
-## Presentations
+## On-going publications
   
-- [ ] Invited talk scheduling workhop
-  - [ ] Send title and abstract
-- [x] Invited talk Bordeaux, Dec 2019
+[ ] Nature paper
+[ ] Neural network analysis
 
-## Papers
 
-- [ ] PDE-based app resiliency paper
-   - [x] Submit abstract - 01/24
-   - [x] Create baseline paper for PDE-based app resiliency
-   - [ ] Run new experiments
-- [x] IPDPS paper accepted
+## ORNL
 
-## Research
+- ADIOS
+   - [ ] Install and run examples with ADIOS
+   - [ ] Run ADIOS-Testing exaples with different engines
+   - [ ] State of the art catalog files
 
-- [ ] iSBatch testing
-   - [ ] Correlate Slurm logs to find failed runs
+- ADIOS OLCF
+   - [ ] Access to Tulip
+   - [ ] Run ADIOS on Tulip
+
+- WDM App
+   - [ ] Read the paper about the application 2020_kinetic_core
+   - [ ] Read the EFFIS paper
+
+- Darshan
+   - [ ] Get access to OLCF account and Darshan logs
+   - [ ] Run the CORAL-2 benchmark with Darshan
+   - [ ] Extract the list of features from the logs
+
+## Vanderbilt
+
+- [ ] Neuroscience
+   - [ ] Generate sequences for different applications
+   - [ ] Impact of the new sequence on the liver log
+
 - [ ] Neural networs for linear algebra
-   - [x] Test black box NN with different matrix
-   - [x] Test different configurations
-- [ ] Prefetching study - I/O maybe Lucas/HY
-- [ ] Preferential checkpoiting - Gopi/Devesh
-- [ ] Geometry aware approximation - Josh
-- [ ] UTK
-- [ ] Neural networks resiliency
-- [ ] Speculative scheduling simulator - Gopi/Baxter
+   - [ ] Write down everything we have so far
 
 <br/>
 
