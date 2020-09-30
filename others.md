@@ -1,7 +1,7 @@
 ## On-going publications
   
-[ ] Nature paper
-[ ] Neural network analysis
+- [ ] Nature paper
+- [ ] Neural network analysis
 
 
 ## ORNL
