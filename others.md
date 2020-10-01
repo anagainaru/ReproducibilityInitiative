@@ -1,3 +1,13 @@
+[Back](index.md)
+
+## Travel
+
+N/A
+
+## Visas
+
+- [ ] Green Card
+
 ## On-going publications
   
 - [ ] Nature paper
@@ -35,24 +45,3 @@
 
 <br/>
 
-[Back](index.md)
-
-## Travel
-
-- [ ] Travel to the scheduling workshop, Denver, 13-15 May 2020
-
-## Visas
-
-- [x] H1B email to lawyers
-- [ ] Green Card
-
-## Apply
-
-- [x] Application for INRIA
-- [x] Statements for US universities
-- [x] Contact Judith
-
-## Bank
-
-- [x] Bank savings account vesting 10 January 2020
-  - [ ] Find another certificate offer

@@ -41,7 +41,6 @@
 
 [Travel and bills](others.md)
 
-[Teaching](teaching.md)
 
 <br/>
 

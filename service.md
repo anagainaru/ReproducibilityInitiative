@@ -1,3 +1,14 @@
+[Back](index.md)
+
+## Service
+
+- [ ] Cluster 2020 Applications Papers Committee Member
+- [ ] SC 2020 Performance Track
+- [ ] TPDC review
+- [ ] JPDC editor
+
+
+### Details
 ## On-going publications
   
 - [ ] Nature paper
@@ -35,14 +46,3 @@
 
 <br/>
 
-[Back](index.md)
-
-## Service
-
-- [ ] Cluster 2020 Applications Papers Committee Member
-- [ ] SC 2020 Performance Track
-- [ ] TPDC review
-- [ ] JPDC editor
-
-
-### Details
