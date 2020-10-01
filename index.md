@@ -48,3 +48,12 @@
 ## Already done:
 
 - [x] Invited talk Bordeaux, Dec 2019
+- [x] NSF reviews
+- [x] 18 month term for TPDS review
+- [x] Tutorials Vice-chair SC 2020
+- [x] ISC 2020 Poster
+- [x] SC 2020 BOF
+- [x] Program committee HPDC 2020
+        - [x] Lead paper online discussion
+- [x] IJHPCA paper review editor
+- [x] ACM Transactions on Parallel Computing review
