@@ -6,7 +6,9 @@
 - [ ] SC 2020 Performance Track
 - [ ] TPDC review
 - [ ] JPDC editor
-
+- [ ] IPDPS 2021 Algorithms Track
+- [ ] First International Symposium on Checkpointing for Supercomputing (SuperCheck'21)
+- [ ] CCIW workshop organizer 2021 (in conjunction with HPDC21)
 
 ### Details
 ## On-going publications
