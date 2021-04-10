@@ -57,7 +57,7 @@ The scripts used to run the code using files or staging on Summit can be fund in
 
 ### XGC
 
-<img src="https://www.olcf.ornl.gov/wp-content/uploads/2015/04/chang2.jpg" width="320px" align="right" />
+<img src="img/xgc.jpeg" width="320px" align="right" />
 
 XGC is a particle-in-cell (PIC) numerical simulation code for modelling plasma edge physics, including a tokamak’s X-point. It solves the gyromagnetic equations, where the domain is divided into discrete (cross-sectional) poloidal planes about the torus, representing field data on a fixed unstructured triangular mesh in each plane.
 
@@ -70,7 +70,7 @@ Scripts for compiling and running XGC and VTK-m on Summit are in the `XGC` folde
 
 ### Simulations
 
-<img src="https://www.olcf.ornl.gov/wp-content/uploads/2015/04/chang2.jpg" width="320px" align="right" />
+<img src="img/simulation.png" width="320px" align="right" />
 
 The simulation codes are iterative processes implementing the methodology described in the figure on the right. Writers compute using a DoCompute function then write data. Readers read data, prepare it for the analysis with DoPrepare and compute using DoAnalysis function.
 
