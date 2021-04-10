@@ -29,9 +29,10 @@ cmake/3.18.2
 </h1>
 The implementations we use in this paper are based on ADIOS due to the abstraction it provides for applications to express what data is produced and when that data is ready for output, or what data an application wants to read and when. 
 We use: 
-- BP engine for traditional sequential execution. The BP algorithm can also be used in MPMD (multiple program, multiple data) mode to implement staging through files by running the producer and consumers in parallel.
-- SSC (Staging for Strong Coupling) algorithm for staging data
-- Inline algorithm for in-situ 0-copy stagin
+
+  * BP engine for traditional sequential execution. The BP algorithm can also be used in MPMD (multiple program, multiple data) mode to implement staging through files by running the producer and consumers in parallel.
+  * SSC (Staging for Strong Coupling) algorithm for staging data
+  * Inline algorithm for in-situ 0-copy stagin
 
 We use ADIOS-2 from source code from the latest github release in March 2021.
 ```
@@ -51,6 +52,7 @@ In order to use ADIOS-2 inside python:
 export PYTHONPATH=/Users/95j/work/adios/adios2-install/Python/3.8/site-packages
 ```
 
+We use the default configuration for all engines. Description of all the algorithms can be found at [https://adios2.readthedocs.io/en/latest/](https://adios2.readthedocs.io/en/latest/)
 
 <h1 id="Sec2">
 3. Description of the software and applications used
@@ -111,7 +113,7 @@ make -j4
 ```
 
 **Experiments**
-1. Strong/Weak scaling experiments for measuring the IO time. Scripts for these are in `simulation/weak_*.sh` and `simulation/strong_*.sh` (*Figure 6*)
-2. Bandwidth measurements. Scripts in `simulation/read_bw*.sh` and `simulation/write_bw*.sh` (*Figure 9*)
+1. Strong/Weak scaling experiments for measuring the IO time. Scripts for these are in `simulation/weak_*.sh` and `simulation/strong_*.sh`
+2. Bandwidth measurements. Scripts in `simulation/read_bw*.sh` and `simulation/write_bw*.sh` 
 3. Inline algorithms. All the experiments involving the inline algorithm use the code in `simulation/iReadWriter.cpp`.
 4. Medical applications are simulated by using the codes and scripts in `simulation/medical*`
