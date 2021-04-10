@@ -2,8 +2,8 @@
 
 ### Table of contents:
 1. <a href="#Sec1"> Description of the system </a>
-1. <a href="#Sec2"> Description of the codes and applications used </a>
-2. <a href="#Sec3"> Description of the used input data </a>
+2. <a href="#Sec3"> Description of staging algorithms used </a>
+3. <a href="#Sec2"> Description of the codes and applications used </a>
 
 <h1 id="Sec1">
 1. Description of the system
@@ -24,8 +24,36 @@ CMAKE version
 cmake/3.18.2 
 ```
 
+<h1 id="Sec3">
+2. Description of the staging algorothms used
+</h1>
+The implementations we use in this paper are based on ADIOS due to the abstraction it provides for applications to express what data is produced and when that data is ready for output, or what data an application wants to read and when. 
+We use: 
+- BP engine for traditional sequential execution. The BP algorithm can also be used in MPMD (multiple program, multiple data) mode to implement staging through files by running the producer and consumers in parallel.
+- SSC (Staging for Strong Coupling) algorithm for staging data
+- Inline algorithm for in-situ 0-copy stagin
+
+We use ADIOS-2 from source code from the latest github release in March 2021.
+```
+export ADIOS_HOME=`pwd`
+git clone https://github.com/ornladios/ADIOS2.git
+mkdir build
+mkdir install
+cd build/
+
+cmake -DADIOS2_USE_Fortran=ON -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran ../ADIOS2
+make -j
+cmake -D CMAKE_INSTALL_PREFIX=${ADIOS_HOME}/install ../ADIOS2/
+make -j install
+```
+In order to use ADIOS-2 inside python:
+```
+export PYTHONPATH=/Users/95j/work/adios/adios2-install/Python/3.8/site-packages
+```
+
+
 <h1 id="Sec2">
-1. Description of the software and applications used
+3. Description of the software and applications used
 </h1>
 
 Experiments are made using simulations using the codes in `simulation` and two applications:
