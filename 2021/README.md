@@ -18,7 +18,7 @@ All the batch scripts used for submitting the jobs on Summit are in each applica
 
 Unless otherwise specified, the default versions for all the software used:
 ```
-GCC --version
+GCC version
 gcc (GCC) 6.4.0
 CMAKE version
 cmake/3.18.2 
@@ -44,7 +44,46 @@ v_t = Dv * (v_xx + v_yy + v_zz) + u * v^2 - (F + k) * v
 ```
 Basis from the code can be found at [https://github.com/pnorbert/adiosvm/tree/master/Tutorial/gray-scott](https://github.com/pnorbert/adiosvm/tree/master/Tutorial/gray-scott)
 
+Installing the application:
+```
+mkdir build
+cd build
+cmake -D adios2_ROOT=/ccs/home/againaru/adios/ADIOS2-init/install/lib64/cmake -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_COMPILER=gcc ..
+make
+```
+Changing the problem size can be done in the `simualtion/settings.json` file by changing the value of variable L. 
 
+The scripts used to run the code using files or staging on Summit can be fund in `Gray-Scott/submit_summit.sh`.
+
+### XGC
+
+<img src="https://www.olcf.ornl.gov/wp-content/uploads/2015/04/chang2.jpg" width="320px" align="right" />
+
+XGC is a particle-in-cell (PIC) numerical simulation code for modelling plasma edge physics, including a tokamak’s X-point. It solves the gyromagnetic equations, where the domain is divided into discrete (cross-sectional) poloidal planes about the torus, representing field data on a fixed unstructured triangular mesh in each plane.
+
+Requesting access to the XGC code can be done at: [https://xgc.pppl.gov/html/getting_xgc.html](https://xgc.pppl.gov/html/getting_xgc.html).
+The experiments used the development branch of the main repository.
+
+Instructions on how to compile XGC together with VTK-m can be found at [https://github.com/anagainaru/ADIOS2-addons/tree/main/DataStreaming/XGC](https://github.com/anagainaru/ADIOS2-addons/tree/main/DataStreaming/XGC)
+
+Scripts for compiling and running XGC and VTK-m on Summit are in the `XGC` folder.
 
 ### Simulations
 
+<img src="https://www.olcf.ornl.gov/wp-content/uploads/2015/04/chang2.jpg" width="320px" align="right" />
+
+The simulation codes are iterative processes implementing the methodology described in the figure on the right. Writers compute using a DoCompute function then write data. Readers read data, prepare it for the analysis with DoPrepare and compute using DoAnalysis function.
+
+To build the codes:
+```bash
+mkdir build
+cd build
+cmake -D adios2_ROOT=/path/to/ADIOS/install ..
+make -j4
+```
+
+**Experiments**
+1. Strong/Weak scaling experiments for measuring the IO time. Scripts for these are in `simulation/weak_*.sh` and `simulation/strong_*.sh` (*Figure 6*)
+2. Bandwidth measurements. Scripts in `simulation/read_bw*.sh` and `simulation/write_bw*.sh` (*Figure 9*)
+3. Inline algorithms. All the experiments involving the inline algorithm use the code in `simulation/iReadWriter.cpp`.
+4. Medical applications are simulated by using the codes and scripts in `simulation/medical*`
